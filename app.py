@@ -55,11 +55,13 @@ record = db.users
 
 
 # Database Connection
-connection = pyodbc.connect(
-    Driver='{ODBC Driver 13 for SQL Server};Server=tcp:ccfp.database.windows.net,1433;Database=ccfp;Uid=CloudSA148bc47e;Pwd=ThisSucks!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
-)  # Creating Cursor
+server = 'ccfp.database.windows.net'
+database = 'ccfp'
+username = 'CloudSA148bc47e'
+password = 'ThisSucks!' 
+driver= '{ODBC Driver 17 for SQL Server}'
+connection = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)  # Creating Cursor
 cursor = connection.cursor()
-
 
 @app.route('/')
 def home():
