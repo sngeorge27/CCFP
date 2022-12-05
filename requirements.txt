@@ -1,5 +1,7 @@
 flask
 pymongo
 certifi
+pandas
+pyodbc
 bcrypt
-pymongo[gssapi,aws,ocsp,snappy,srv,tls,zstd,encryption]
+pymongo[aws,ocsp,snappy,srv,tls,zstd,encryption]
