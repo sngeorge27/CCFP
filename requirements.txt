@@ -1,1 +1,9 @@
-Flask
+flask
+azure-cognitiveservices-vision-computervision
+msrest
+pymongo
+certifi
+bcrypt
+numpy
+pandas
+pymongo[gssapi,aws,ocsp,snappy,srv,tls,zstd,encryption]
