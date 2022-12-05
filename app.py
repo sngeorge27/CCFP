@@ -59,8 +59,8 @@ server = 'ccfp.database.windows.net'
 database = 'ccfp'
 username = 'CloudSA148bc47e'
 password = 'ThisSucks!' 
-driver= '{ODBC Driver 17 for SQL Server}'
-connection = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)  # Creating Cursor
+driver= '{ODBC Driver 13 for SQL Server}'
+connection = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password+'')  # Creating Cursor
 cursor = connection.cursor()
 
 @app.route('/')
