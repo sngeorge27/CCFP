@@ -4,4 +4,5 @@ certifi
 bcrypt
 numpy
 pandas
+pyodbc
 pymongo[aws,ocsp,snappy,srv,tls,zstd,encryption]
