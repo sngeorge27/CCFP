@@ -1,6 +1,6 @@
 
 from flask import Flask, flash, request, redirect, sessions, url_for, render_template, request, session, abort, make_response
-#from numpy import product
+from numpy import product
 from pandas.core.frame import DataFrame
 from werkzeug.utils import secure_filename
 import pymongo
@@ -52,7 +52,6 @@ db = mongo.ccfpusers
 fs = GridFS(db)
 #db = mongo.get_database('readwords')
 record = db.users
-# Driver='{ODBC Driver 13 for SQL Server}'; Server=tcp:'ccfp.database.windows.net'; Port=1433; Database='ccfp'; Uid='CloudSA148bc47e'; Pwd='ThisSucks!'
 
 
 # Database Connection
@@ -61,10 +60,8 @@ database = 'ccfp'
 username = 'CloudSA148bc47e'
 password = 'ThisSucks!' 
 driver= '{ODBC Driver 13 for SQL Server}'
-  
 connection = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password+'')  # Creating Cursor
 cursor = connection.cursor()
-
 
 @app.route('/')
 def home():
