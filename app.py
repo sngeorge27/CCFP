@@ -56,13 +56,13 @@ record = db.users
 
 
 # Database Connection
-server = 'ccfp.database.windows.net'
-database = 'ccfp'
-username = 'CloudSA148bc47e'
+server = 'tcp:ccfp.database.windows.net' 
+database = 'ccfp' 
+username = 'CloudSA148bc47e' 
 password = 'ThisSucks!' 
-driver= '{ODBC Driver 13 for SQL Server}'
-  
-connection = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password+'')  # Creating Cursor
+# ENCRYPT defaults to yes starting in ODBC Driver 18. It's good to always specify ENCRYPT=yes on the client side to avoid MITM attacks.
+connection = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';ENCRYPT=yes;UID='+username+';PWD='+ password)
+#connection = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password+'')  # Creating Cursor
 cursor = connection.cursor()
 
 
